@@ -9,3 +9,33 @@
 Также сообщать пользователю о невозможности деления на ноль,
 если он ввел 0 в качестве делителя.
 """
+
+while True:
+    first_num = int(input('Введите первое число: '))
+    second_num = int(input('Введите второе число: '))
+    operation = input('Введите знак оперции (Вы можете ввести 0, +, -, *, / ), если будет введёт 0,'
+                      ' то произойдет выход из программы: ')
+    if operation == '0':
+        break
+    else:
+        while True:
+            if operation != '-' and operation != '+' and operation != '*' and operation != '/':
+                print('Вы ввели неверный знак операции повторите ввод')
+                operation = input('Введите знак оперции: ')
+                continue
+            else:
+                if operation == '*':
+                    res = first_num * second_num
+                elif operation == '/':
+                    if second_num != 0:
+                        res = first_num / second_num
+                    else:
+                        print('Деление на ноль, не обходимо изменить второе число')
+                        second_num = int(input('Введите второе число: '))
+                        continue
+                elif operation == '+':
+                    res = first_num + second_num
+                elif operation == '-':
+                    res = first_num - second_num
+                print(f'{first_num} {operation} {second_num} = {res}')
+                break
