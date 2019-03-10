@@ -18,7 +18,7 @@ while number % dec != number:
 print(f'Количество четных цифр: {count_even}\nКоличество нечетных цифр: {count_odd}')
 
 
-# Решение рекрсивным методом
+# Решение рекурсивным методом
 def calc_even_odd(number_inp, dec=1, count_even_r=0, count_odd_r=0):
     if number_inp % dec == number_inp:
         return f'Количество четных цифр: {count_even_r}\nКоличество нечетных цифр: {count_odd_r}'
