@@ -28,8 +28,7 @@ def calc_len_number(number_inp, len_num=1):
     if number_inp == res_number:
         return len_num
     else:
-        len_num *= 10
-        return calc_len_number(number_inp, len_num)
+        return calc_len_number(number_inp, len_num * 10)
 
 
 len_num = calc_len_number(number)
@@ -41,10 +40,9 @@ def calc_even_odd(number_inp=number, calc_len=1, count_even_f=0, count_odd_f=0, 
         return f'Количество четных цифр: {count_even_f}\nКоличество нечетных цифр: {count_odd_f}'
     else:
         if int((number_inp % calc_len) // (calc_len / 10)) % 2 == 0:
-            count_even_f += 1
+            return calc_even_odd(number_inp, calc_len, count_even_f + 1, count_odd_f)
         else:
-            count_odd_f += 1
-        return calc_even_odd(number_inp, calc_len, count_even_f, count_odd_f)
+            return calc_even_odd(number_inp, calc_len, count_even_f, count_odd_f + 1)
 
 
 print(calc_even_odd(number))

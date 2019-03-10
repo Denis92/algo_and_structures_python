@@ -22,9 +22,7 @@ def calc_sum(n, step=0, res=1, res_sum=1):
         return f'Сумма ряда чисел = {res_sum}'
     else:
         res /= -2
-        res_sum += res
-        step += 1
-        return calc_sum(n, step, res, res_sum)
+        return calc_sum(n, step + 1, res, res_sum + res)
 
 
 print(calc_sum(n))

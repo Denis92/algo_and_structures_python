@@ -27,8 +27,8 @@ if step >= 10:
 # Решение рекурсивным методом
 
 def puzzle(count_step=0, step=10):
-    if count_step == step:
-        return f'Было загадано число {rand_number}'
+    if count_step >= step:
+        return print(f'Было загадано число {rand_number}')
     else:
         user_num = int(input('Введите число от 0 до 100: '))
         if user_num == rand_number:
@@ -38,8 +38,7 @@ def puzzle(count_step=0, step=10):
             print('Вы не угадали, попробуйте ещё раз.\nПодсказка: Загаданое число меньше введенного ')
         elif user_num < rand_number:
             print('Вы не угадали, попробуйте ещё раз.\nПодсказка: Загаданое число больше введенного ')
-        count_step += 1
-        return puzzle(count_step)
+        return puzzle(count_step + 1)
 
 
 puzzle()

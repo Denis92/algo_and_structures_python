@@ -13,7 +13,7 @@ while i != n:
 
 res_first = n * (n + 1) / 2
 
-print(f'{res_first} == {res_second}')
+print(f'n(n+1)/2 = ({res_first}) == 1+2+...+n = ({res_second})')
 
 
 # Решение рекурсивным методом
@@ -22,9 +22,7 @@ def calc_sum(n, calc_n=0, res_second=0):
     if calc_n == n:
         return res_second
     else:
-        calc_n += 1
-        res_second += calc_n
-        return calc_sum(n, calc_n, res_second)
+        return calc_sum(n, calc_n + 1, res_second + calc_n)
 
 
-print(f'{res_first} == {calc_sum(n)}')
+print(f'n(n+1)/2 = ({res_first}) == 1+2+...+n = ({res_second})')
