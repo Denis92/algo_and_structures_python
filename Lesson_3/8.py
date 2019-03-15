@@ -4,3 +4,10 @@
 записывать ее в последнюю ячейку строки.
 В конце следует вывести полученную матрицу.
 """
+
+list_input = [list(map(int, input('Введите элементы матрицы 5x4 через пробел : ').split(' '))) for i in range(4)]
+print(f'Входной массив {list_input}')
+print(f'Выходной массив:')
+for i in range(len(list_input)):
+    list_input[i].append(sum(list_input[i]))
+    print(list_input[i])
